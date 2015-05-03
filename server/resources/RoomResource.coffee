@@ -12,22 +12,25 @@ class RoomRoute extends Nodulator.Route
 
     # Join bitch
     @Get '/join', @Auth(), (req, res) =>
-    	@resource.Fetch 1, (err, room) ->
+      console.log 'lol'
+      @resource.Fetch 1, (err, room) ->
 
-    	if !(req.user.id in room.rooms)
-    		room.rooms.push req.user.id
-    		room.Save (err) ->
+        console.log 'lol2', err, room
+        if !(req.user.id in room.rooms)
+          room.rooms.push req.user.id
+          room.Save (err) ->
 
-    	else
-    		console.warn 'Room panic'
+        else
+          console.warn 'Room panic'
 
+        res.sendStatus(200)
 
-class RoomResource extends Nodulator.Resource 'room', Nodulator.Route.DefaultRoute
+class RoomResource extends Nodulator.Resource 'room', RoomRoute
 
 RoomResource.Init()
 
 module.exports = RoomResource
 
-RoomResource.Create 
-	rooms: []
+RoomResource.Create
+  rooms: []
 , (err, room) ->

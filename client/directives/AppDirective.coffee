@@ -6,11 +6,13 @@ class AppDirective extends Nodulator.Directive 'app', 'roomService', 'socket'
 
   Init: ->
     @roomService.Join (err) =>
+      @err = 'lol'
       return @err = 'Error joining' if err?
 
-      @joined = true
-
+      @scope.joined = true
+      console.log @
       @socket.On 'start_game', =>
-        @started = true
+        @scope.started = true
+
 
 AppDirective.Init()

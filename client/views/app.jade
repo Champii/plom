@@ -1,10 +1,10 @@
 div
   | App
-  div(ng-if="!joined")
+  div(ng-show="!joined")
     | Joining
-  div(ng-if="joined")
+  div(ng-show="joined")
     room
-  div(ng-if="started")
+  div(ng-show="started")
     game
-  div(ng-if="err.length")
+  div(ng-show="err.length")
     | {{err}}

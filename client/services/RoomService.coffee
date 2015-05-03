@@ -4,7 +4,7 @@ class RoomService extends Nodulator.Service 'room', '$http'
     @$http.get '/api/1/rooms/join'
       .success ->
         done() if done?
-      .error (code, data)->
+      .error (code, data) ->
         done data if done?
 
 RoomService.Init()
