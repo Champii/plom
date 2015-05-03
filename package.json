@@ -1,10 +1,6 @@
 {
-  "name": "plom",
+  "name": "app",
   "version": "0.0.1",
   "dependencies": {
-    "nodulator": "0.0.17",
-    "nodulator-account": "0.0.7",
-    "nodulator-assets": "0.0.9",
-    "nodulator-socket": "0.0.3"
   }
 }
