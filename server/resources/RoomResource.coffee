@@ -12,10 +12,10 @@ class RoomRoute extends Nodulator.Route
 
     # Join bitch
     @Get '/join', @Auth(), (req, res) =>
-      console.log 'lol'
+      # console.log 'lol'
       @resource.Fetch 1, (err, room) ->
 
-        console.log 'lol2', err, room
+        # console.log 'lol2', err, room
         if !(req.user.id in room.rooms)
           room.rooms.push req.user.id
           room.Save (err) ->

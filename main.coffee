@@ -6,10 +6,15 @@ Assets = require 'nodulator-assets'
 Angular = require 'nodulator-angular'
 Account = require 'nodulator-account'
 
+Nodulator.ExtendDefaultConfig
+  store:
+    type: 'redis'
+
 Nodulator.Use Socket
 Nodulator.Use Assets
 Nodulator.Use Angular
 Nodulator.Use Account
+
 
 Server.Init()
 Nodulator.Run()
