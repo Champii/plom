@@ -1,6 +1,6 @@
 class RoomDirective extends Nodulator.Directive 'room', 'roomService'
 
   Init: ->
-    @roomService.Join()
+    # @roomService.Join()
 
 RoomDirective.Init()

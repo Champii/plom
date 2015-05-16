@@ -12,7 +12,7 @@ class AppDirective extends Nodulator.Directive 'app', 'roomService', 'socket'
       @scope.joined = true
       console.log @
       @socket.On 'start_game', =>
+        console.log 'start_game'
         @scope.started = true
-
 
 AppDirective.Init()
